@@ -1,2 +1,268 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@layer base {
+    h1 {
+        @apply text-5xl font-bold;
+    }
+
+    h2 {
+        @apply text-4xl font-semibold;
+    }
+
+    h3 {
+        @apply text-2xl font-medium;
+    }
+
+    h4 {
+        @apply text-xl font-medium;
+    }
+}
+
+@theme {
+    --color-dusk: #4682b4;
+    --color-dawn: #87ceeb;
+    --color-teal: #add8e6;
+    --color-offwhite: #f8f8ff;
+    --color-yellow: #f5f5dc;
+}
+
+:root {
+    --color-dusk: #4682b4;
+    --color-dawn: #87ceeb;
+    --color-teal: #add8e6;
+    --color-offwhite: #f8f8ff;
+    --color-yellow: #f5f5dc;
+
+    --bg: #eef6ff;
+    --header-bg: var(--color-yellow);
+    --surface: #ffffff;
+    --surface-muted: #dfeaf8;
+    --text: #10203a;
+    --text-secondary: #4a6b8a;
+    --text-muted: #5f7b96;
+    --border: rgba(70, 130, 180, 0.18);
+    --button-primary: var(--color-dusk);
+    --button-primary-text: var(--color-offwhite);
+    --button-secondary: rgba(70, 130, 180, 0.1);
+    --button-secondary-text: var(--color-dusk);
+    --link: var(--color-dusk);
+    --link-hover: var(--color-dawn);
+    --highlight: var(--color-yellow);
+    --highlight-text: #10203a;
+    --shadow: 0 24px 80px rgba(16, 32, 58, 0.12);
+    --stripe-1: rgba(255, 255, 255, 0.08);
+    --stripe-2: rgba(70, 130, 180, 0.08);
+    --stripe-3: rgba(135, 206, 235, 0.06);
+    --stripe-4: rgba(255, 255, 255, 0.04);
+}
+
+html[data-theme='dark'] {
+    --bg: #0f1b22;
+    --header-bg: var(--color-slate-900);
+    --surface: #152537;
+    --surface-muted: #172d44;
+    --text: #f8f8ff;
+    --text-secondary: #bfdcff;
+    --text-muted: #9fc7ea;
+    --border: rgba(135, 206, 235, 0.14);
+    --button-primary: var(--color-dusk);
+    --button-primary-text: var(--color-offwhite);
+    --button-secondary: rgba(248, 248, 255, 0.08);
+    --button-secondary-text: var(--color-offwhite);
+    --link: var(--color-dawn);
+    --link-hover: var(--color-teal);
+    --highlight: #f5f5dc;
+    --highlight-text: #10203a;
+    --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    --stripe-1: rgba(248, 248, 255, 0.05);
+    --stripe-2: rgba(70, 130, 180, 0.12);
+    --stripe-3: rgba(135, 206, 235, 0.08);
+    --stripe-4: rgba(255, 255, 255, 0.03);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --bg: #0f1b22;
+        --header-bg: var(--color-slate-900);
+        --surface: #152537;
+        --surface-muted: #172d44;
+        --text: #f8f8ff;
+        --text-secondary: #bfdcff;
+        --text-muted: #9fc7ea;
+        --border: rgba(135, 206, 235, 0.14);
+        --button-primary: var(--color-dusk);
+        --button-primary-text: var(--color-offwhite);
+        --button-secondary: rgba(248, 248, 255, 0.08);
+        --button-secondary-text: var(--color-offwhite);
+        --link: var(--color-dawn);
+        --link-hover: var(--color-teal);
+        --highlight: #f5f5dc;
+        --highlight-text: #10203a;
+        --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+        --stripe-1: rgba(248, 248, 255, 0.05);
+        --stripe-2: rgba(70, 130, 180, 0.12);
+        --stripe-3: rgba(135, 206, 235, 0.08);
+        --stripe-4: rgba(255, 255, 255, 0.03);
+    }
+}
+
+html, body {
+    min-height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.scrolling-diagonal-bg {
+    background-color: var(--bg);
+    background-image: repeating-linear-gradient(
+        45deg,
+        var(--stripe-4),
+        var(--stripe-4) 38px,
+        var(--stripe-2) 31px,
+        var(--stripe-3) 40px
+    );
+    background-size: 82px 82px;
+    animation: 5s linear infinite scroll-diagonal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-dusk);
+    margin-top: 0;
+    font-family: var(--font-sans);
+}
+
+p,
+li,
+span,
+label {
+    color: var(--text);
+}
+
+header {
+    background-color: var(--header-bg);
+}
+
+small,
+.caption,
+.meta,
+.secondary-text {
+    color: var(--text-secondary);
+}
+
+.card,
+.surface {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+}
+
+.card-alt {
+    background: var(--surface-muted);
+    border-color: transparent;
+}
+
+.btn,
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.theme-toggle-button {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.theme-toggle-button:hover {
+    background: var(--button-secondary);
+    color: var(--button-secondary-text);
+    transform: translateY(-1px);
+}
+
+.theme-toggle-button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(70,130,180,0.12);
+}
+
+.btn-primary,
+.button-primary {
+    background: var(--button-primary);
+    color: var(--button-primary-text);
+    padding: 0.85rem 1.4rem;
+}
+
+.btn-primary:hover,
+.button-primary:hover {
+    background: var(--link-hover);
+    transform: translateY(-1px);
+}
+
+.btn-secondary,
+.button-secondary {
+    background: var(--button-secondary);
+    color: var(--button-secondary-text);
+    border: 1px solid var(--color-dusk);
+    padding: 0.75rem 1.3rem;
+}
+
+.btn-secondary:hover,
+.button-secondary:hover {
+    background: rgba(135, 206, 235, 0.18);
+}
+
+.link,
+.link-inline {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link:hover,
+.link-inline:hover,
+.link:focus-visible,
+.link-inline:focus-visible {
+    color: var(--link-hover);
+    text-decoration: none;
+}
+
+.highlight,
+.badge,
+.callout {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    background: var(--highlight);
+    color: var(--highlight-text);
+    font-weight: 700;
+}
+
+.chip,
+.tag {
+    background: var(--color-teal);
+    color: var(--bg);
+    border-radius: 999px;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.95rem;
+}
+
+@keyframes scroll-diagonal {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 82px 82px;
+    }
+}
