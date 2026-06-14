@@ -41,17 +41,20 @@
 
 <div class="scrolling-diagonal-bg min-h-screen">
 	<div class="min-h-screen flex flex-col text-current bg-transparent">
-		<header class="flex flex-row justify-between px-10 py-6">
-			<div class="flex flex-row justify-center align-end gap-12 w-full">
-				<div class="flex flex-col gap-1">
-					<h1 class="text-4xl">Kristy Moore</h1>
-					<h2 class="text-2xl tracking-wide">Journalist</h2>
+		<header class="relative flex flex-row justify-between items-end px-10 py-6">
+			<div class="flex flex-row items-end w-full">
+				<span class="w-0 md:w-1/10 lg:w-1/6"></span>
+				<div class="flex flex-row gap-12 w-full justify-between md:justify-start">
+					<div class="flex flex-col gap-1">
+						<h1 class="text-4xl">Kristy Moore</h1>
+						<h2 class="text-2xl tracking-wide">Journalist</h2>
+					</div>
+					<NavBar {theme} onToggleTheme={toggleTheme} />
 				</div>
-				<NavBar />
 			</div>
 			<button
 				type="button"
-				class="inline-flex items-center justify-center gap-2 rounded-full border px-4 py-3 font-bold transition theme-toggle-button focus:outline-none"
+				class="hidden md:inline-flex items-center justify-center gap-2 rounded-full border px-4 py-3 font-bold transition theme-toggle-button focus:outline-none"
 				on:click={toggleTheme}
 				aria-pressed={theme === 'dark'}
 				aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -72,12 +75,16 @@
 			{@render children()}
 		</main>
 
-		<footer class="flex flex-row justify-center align-center gap-4 px-10 py-6">
-			{#each socialMedias as social}
-				<a href={social.href} aria-label={social.label} target="_blank" rel="noopener noreferrer">
-					<i class={social.icon}></i>
-				</a>
-			{/each}
+		<footer class="flex flex-col justify-center items-center gap-4 px-10 py-6">
+			<div class="flex flex-row justify-center align-center gap-4">
+				{#each socialMedias as social}
+					<a href={social.href} aria-label={social.label} target="_blank" rel="noopener noreferrer">
+						<i class={social.icon}></i>
+					</a>
+				{/each}
+			</div>
+
+			<p class="text-xs">All rights reserved &#xA9; {new Date().getFullYear()} Kristy Reports</p>
 		</footer>
 	</div>
 </div>
