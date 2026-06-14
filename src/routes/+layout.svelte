@@ -3,6 +3,7 @@
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import NavBar from '$lib/components/NavBar.svelte';
+	import socialMedias from '$lib/data/socials';
 
 	let { children } = $props();
 	let theme = $state<'light' | 'dark'>('light');
@@ -33,6 +34,9 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </svelte:head>
 
 <div class="scrolling-diagonal-bg min-h-screen">
@@ -40,8 +44,8 @@
 		<header class="flex flex-row justify-between px-10 py-6">
 			<div class="flex flex-row justify-center align-end gap-12 w-full">
 				<div class="flex flex-col gap-1">
-					<h2>Kristy Moore</h2>
-					<h4>Journalist</h4>
+					<h1 class="text-4xl">Kristy Moore</h1>
+					<h2 class="text-2xl tracking-wide">Journalist</h2>
 				</div>
 				<NavBar />
 			</div>
@@ -64,8 +68,16 @@
 			</button>
 		</header>
 
-		<main class="flex flex-row items-start justify-center p-10">
+		<main class="flex flex-row items-start justify-center p-10 flex-1">
 			{@render children()}
 		</main>
+
+		<footer class="flex flex-row justify-center align-center gap-4 px-10 py-6">
+			{#each socialMedias as social}
+				<a href={social.href} aria-label={social.label} target="_blank" rel="noopener noreferrer">
+					<i class={social.icon}></i>
+				</a>
+			{/each}
+		</footer>
 	</div>
 </div>

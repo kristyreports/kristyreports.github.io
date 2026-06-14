@@ -6,6 +6,6 @@
     <a href="/" class="font-semibold link focus:outline-none">Home</a>
     <a href="/blog" class="font-semibold link">Blog</a>
     <a href="/portfolio" class="font-semibold link">Portfolio</a>
-    <a href="" class="font-semibold link">Resume</a> <!--todo - add download resume pdf button-->
+    <a href="/resume" class="font-semibold link">Resume</a> <!--todo - add download resume pdf button-->
   </div>
 </nav>
