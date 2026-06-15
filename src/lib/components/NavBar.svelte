@@ -22,7 +22,7 @@
     <a href="/" class="font-semibold link focus:outline-none text-xl">Home</a>
     <a href="/blog" class="font-semibold link text-xl">Blog</a>
     <a href="/portfolio" class="font-semibold link text-xl">Portfolio</a>
-    <a href="/resume" class="font-semibold link text-xl">Resume</a> <!--todo - add download resume pdf button-->
+    <a href="/resume" class="font-semibold link text-xl">Resume</a>
   </div>
 </nav>
 

@@ -3,7 +3,7 @@
 
     <div class="resume-pdf-container">
         <object data="/KristyMoore_Resume.pdf" type="application/pdf" title="Kristy's Resume PDF" width="100%" height="100%">
-            <p>Your browser does not support embedded PDFs. You can <a href="/resume.pdf" download>download the resume here</a> instead.</p>
+            <p>Your browser does not support embedded PDFs. You can <a href="/KristyMoore_Resume.pdf" download>download the resume here</a> instead.</p>
         </object>
     </div>
 </div>
