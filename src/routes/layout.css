@@ -136,7 +136,6 @@ body {
 
 img, picture, video, canvas, svg {
   display: block;
-  max-width: 100%;
 }
 
 input, button, textarea, select {
@@ -322,9 +321,4 @@ small,
     to {
         background-position: 82px 82px;
     }
-}
-
-img {
-    object-fit: contain;
-    height: 50%;
 }
