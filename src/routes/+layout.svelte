@@ -47,7 +47,7 @@
 				<div class="flex flex-row gap-12 w-full justify-between md:justify-start">
 					<div class="flex flex-col gap-1">
 						<h1 class="text-4xl">Kristy Moore</h1>
-						<h2 class="text-2xl tracking-wide">Journalist</h2>
+						<h2 class="text-2xl tracking-wide font-normal">Journalist</h2>
 					</div>
 					<NavBar {theme} onToggleTheme={toggleTheme} />
 				</div>

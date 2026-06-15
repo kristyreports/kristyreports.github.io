@@ -24,7 +24,7 @@
 
 <div class="flex flex-col gap-6 w-full sm:w-7/10">
 	<h1>Portfolio</h1>
-
+    
 	{#if error}
 		<p class="text-red-300">Error: {error}</p>
 	{:else}
