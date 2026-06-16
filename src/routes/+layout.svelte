@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import NavBar from '$lib/components/NavBar.svelte';
@@ -37,6 +38,21 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<title>{$page.data?.seo?.title ?? 'Kristy Reports'}</title>
+	<meta name="description" content={$page.data?.seo?.description ?? "Kristy Moore's blog and portfolio - Kristy Reports"} />
+
+	<meta property="og:title" content={$page.data?.seo?.title ?? 'Kristy Reports'} />
+	<meta property="og:description" content={$page.data?.seo?.description ?? "Kristy Moore's blog and portfolio - Kristy Reports"} />
+	<meta property="og:type" content={$page.data?.seo?.type ?? 'website'} />
+	<meta property="og:url" content={$page.url.href} />
+	<!-- <meta property="og:image" content={$page.data?.seo?.image ?? '/social-card.png'} /> -->
+
+	<!-- todo - add all socials and determine image -->
+	<meta name="twitter:card" content={$page.data?.seo?.twitterCard ?? 'summary_large_image'} />
+	<meta name="twitter:title" content={$page.data?.seo?.title ?? 'Kristy Reports'} />
+	<meta name="twitter:description" content={$page.data?.seo?.description ?? "Kristy Moore's blog and portfolio - Kristy Reports"} />
+	<!-- <meta name="twitter:image" content={$page.data?.seo?.image ?? '/social-card.png'} /> -->
 </svelte:head>
 
 <div class="scrolling-diagonal-bg min-h-screen">
@@ -44,7 +60,7 @@
 		<header class="relative flex flex-row justify-between items-end px-10 py-6">
 			<div class="flex flex-row items-end w-full">
 				<span class="w-0 md:w-1/10 lg:w-1/6"></span>
-				<div class="flex flex-row gap-12 w-full justify-between md:justify-start">
+				<div class="flex flex-row gap-8 lg:gap-12 w-full justify-between md:justify-start items-center md:items-end">
 					<div class="flex flex-col gap-1">
 						<h1 class="text-4xl">Kristy Moore</h1>
 						<h2 class="text-2xl tracking-wide font-normal">Journalist</h2>

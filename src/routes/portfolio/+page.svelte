@@ -22,11 +22,11 @@
 	});
 </script>
 
-<div class="flex flex-col gap-6 w-full sm:w-7/10">
+<div class="flex flex-col gap-6 w-full sm:w-9/10 md:w-8/10 lg:w-7/10">
 	<h1>Portfolio</h1>
     
 	{#if error}
-		<p class="text-red-300">Error: {error}</p>
+		<p class="error-text">Error: {error}</p>
 	{:else}
 		<div class="space-y-6">
 			{#each posts as post}

@@ -1,4 +1,4 @@
-<div class="flex flex-col gap-8 w-full sm:w-7/10">
+<div class="flex flex-col gap-8 w-full sm:w-9/10 md:w-8/10 lg:w-7/10">
     <h1>Resume</h1>
 
     <div class="resume-pdf-container">
